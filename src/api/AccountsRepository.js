@@ -19,4 +19,15 @@ export class AccountsRepository {
         });
     });
   }
+
+  getAccounts() {
+    return new Promise((resolve, reject) => {
+      axios.get(`${this.url}`, this.config)
+        .then(x => resolve(x.data))
+        .catch(x => {
+          alert(x);
+          reject();
+        });
+    });
+  }
 }
