@@ -88,7 +88,7 @@ export class AccountEditor extends React.Component {
   }
 
   componentDidMount() {
-    let accountId = 1;
+    let accountId = this.props.match.params.accountId;
     this.accountsRepository.getAccountById(accountId)
       .then(account => this.setState(account));
   }
